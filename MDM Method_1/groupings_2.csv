@@ -1,0 +1,55 @@
+student 1,student 11,student 21,student 31,student 41
+student 2,student 12,student 22,student 32,student 42
+student 3,student 13,student 23,student 33,student 43
+student 4,student 14,student 24,student 34,student 44
+student 5,student 15,student 25,student 35,student 45
+student 6,student 16,student 26,student 36,student 46
+student 7,student 17,student 27,student 37,student 47
+student 8,student 18,student 28,student 38,student 48
+student 9,student 19,student 29,student 39,student 49
+student 10,student 20,student 30,student 40,student 50
+iteration 1
+student 1,student 20,student 29,student 38,student 47
+student 2,student 11,student 30,student 39,student 48
+student 3,student 12,student 21,student 40,student 49
+student 4,student 13,student 22,student 31,student 50
+student 5,student 14,student 23,student 32,student 41
+student 6,student 15,student 24,student 33,student 42
+student 7,student 16,student 25,student 34,student 43
+student 8,student 17,student 26,student 35,student 44
+student 9,student 18,student 27,student 36,student 45
+student 10,student 19,student 28,student 37,student 46
+iteration 2
+student 1,student 19,student 27,student 35,student 43
+student 2,student 20,student 28,student 36,student 44
+student 3,student 11,student 29,student 37,student 45
+student 4,student 12,student 30,student 38,student 46
+student 5,student 13,student 21,student 39,student 47
+student 6,student 14,student 22,student 40,student 48
+student 7,student 15,student 23,student 31,student 49
+student 8,student 16,student 24,student 32,student 50
+student 9,student 17,student 25,student 33,student 41
+student 10,student 18,student 26,student 34,student 42
+iteration 3
+student 1,student 18,student 25,student 32,student 49
+student 2,student 19,student 26,student 33,student 50
+student 3,student 20,student 27,student 34,student 41
+student 4,student 11,student 28,student 35,student 42
+student 5,student 12,student 29,student 36,student 43
+student 6,student 13,student 30,student 37,student 44
+student 7,student 14,student 21,student 38,student 45
+student 8,student 15,student 22,student 39,student 46
+student 9,student 16,student 23,student 40,student 47
+student 10,student 17,student 24,student 31,student 48
+iteration 4
+student 1,student 17,student 23,student 39,student 45
+student 2,student 18,student 24,student 40,student 46
+student 3,student 19,student 25,student 31,student 47
+student 4,student 20,student 26,student 32,student 48
+student 5,student 11,student 27,student 33,student 49
+student 6,student 12,student 28,student 34,student 50
+student 7,student 13,student 29,student 35,student 41
+student 8,student 14,student 30,student 36,student 42
+student 9,student 15,student 21,student 37,student 43
+student 10,student 16,student 22,student 38,student 44
+iteration 5

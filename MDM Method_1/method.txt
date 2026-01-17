@@ -1,0 +1,92 @@
+Method 1:
+matrix 
+high achieving student with low achieving student
+
+Further description (method 2):
+Aims of the model:  five groups for each student, such that each group has roughly the same number of students and that each group is similar in ability. It seems from the framing of the model that the ability of each group is more important than the number of members
+
+Model Parameters:
+Number of Students - N (default is 50)
+Number of Sessions - S (default is 5)
+Number of Students per Group - G (default is ~5)
+Score - a grade in some assessment is assigned to each student according to some distribution that should match real life
+
+Model Constraints:
+No Student may work with any other Student more that once
+Every Student must be assigned to exactly 5 sessions
+
+Objectives of the Model:
+Each Group should contain ~G Students each
+Each Group should have similar abilities
+
+
+-----------MODEL VERSION 1-----------
+
+BASIC ALGORITHM:
+
+1 - Order the students from lowest to highest score
+2 - place the students into a matrix of G rows by C / G (this is the number of groups, which based on the initial conditions is 10) columns
+3 - each group is a column of the matrix, set the shift to be 0 [R]
+4 - shift each row to the right by their row index * R, increase R by 1
+5 - repeat steps 3-4 until R = G
+
+
+
+I have run a simple mock-up for steps 1-2: there is a large problem, the data have a similar distribution to the underlying data.
+Instead we would like to have the same mean but a smaller variance for each group. This effect is easier to see when the sample size is increased.
+With 5000 students of with groups of size 500, the data look very similar when plotted on a histogram.
+
+I must therefore tweak this algorithm such that students with higher scores are more likely to be matched with students of a lower score
+
+I have researched how to reduce the variance of data: randomness is the answer. By inputing the students into the list at random, without sorting them, the variance drops to zero.
+
+
+therefore a better version of the algorithm is:
+
+-----------MODEL VERSION 2-----------
+
+BASIC ALGORITHM:
+
+1 - Order the students randomly (w.r.t their test scores)
+2 - place the students into a matrix of G rows by C / G (this is the number of groups, which based on the initial conditions is 10) columns
+3 - each group is a column of the matrix, set the shift to be 0 [R]
+4 - shift each row to the right by their row index * R, increase R by 1
+5 - repeat steps 3-4 until R = G
+
+
+All that I have changed is that the students haven't been sorted
+
+
+The next thing I would do is sort the students into 5 'bins' of ability, and then randomise those bins, hopefully reducing the variance,
+by using just the right amount of randomisation
+
+-----------MODEL VERSION 3-----------
+
+BASIC ALGORITHM:
+1 - Order the students (w.r.t their test scores)
+2 - place the students into a matrix of G rows by C / G (this is the number of groups, which based on the initial conditions is 10) columns
+3 - randomise each row of the matrix
+4 - each group is a column of the matrix
+5 - shift each row to the right by their row index * R, increase R by 1
+6 - repeat steps 3-4 until R = G
+
+
+Current Downside of the model is that some students will always be in the same group, it would be better if everyone was shifted by at least 1 on each iteration.
+
+Looking at the data, the variance shows that the third method is very effective. The variance is very low, even for large datasets. This is promising.
+The next stage is to generate all the analysis and produce the figures. Then I can use these figures and do some research to draw some conclusions.
+
+
+The only real difference on these models is how the students have been arranged into the matrix. Adding some elements of randomness makes the variance of the collective score of the groups smaller.
+
+
+more limitations:
+
+For very small groups, not many different groupings can be made, because not many shifts can be created without wraparound. The maximum number of
+iterations (S in the model parameters) is N / S, or the number of columns in the matrix. Just assuming that its still relatively simple to use a brute force algorithm for less than 5 sessions,
+this limitation is not very impactful. For much larger cohort sizes, there are plenty of columns to this matrix for enough groups to be formed.
+
+Another limitation is that all of the groups are the same size, not whichever size that optimises the group score. Looking at the data for the variance this isn't much of a problem for large enough groups.
+
+
+
